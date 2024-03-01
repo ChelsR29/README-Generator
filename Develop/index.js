@@ -70,6 +70,7 @@ function init() {
         .catch((error) => {
             console.error('Error:', error);
         });
+    }        
 
 // Function call to initialize app
 init();
