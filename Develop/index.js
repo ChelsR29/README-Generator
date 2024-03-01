@@ -60,8 +60,16 @@ function writeToFile(fileName, data) {
     );
 }
 
-// TODO: Create a function to initialize app
-function init() {}
+// Function to initialize app
+function init() {
+    inquirer.prompt(questions)
+        .then((answers) => {
+            const markdown = generateMarkdown(answers);
+            writeToFile('README.md', markdown);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
 
 // Function call to initialize app
 init();
